@@ -1,0 +1,91 @@
+/* Reset styles */
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+/* Global styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4; /* Light gray background */
+    color: #333;
+}
+
+header, footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: rgba(44, 62, 80, 0.8); /* Semi-transparent dark blue header/footer background */
+    color: #fff; /* White text color */
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section {
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+h1, h2 {
+    font-family: 'Roboto Slab', serif;
+    margin-bottom: 10px;
+}
+
+article p {
+    margin-bottom: 15px;
+}
+
+footer p {
+    font-size: 0.8em;
+    color: #ccc; /* Light gray text color */
+}
+
+/* CSS-powered text effects */
+h1 {
+    position: relative;
+    font-size: 3em;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h1::after {
+    content: attr(data-content);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    color: #ffcb05; /* Yellow text color */
+    mix-blend-mode: difference; /* Blend mode for text effect */
+    animation: glitch-animation 2s infinite alternate-reverse;
+}
+
+@keyframes glitch-animation {
+    0% {
+        transform: translate(0);
+    }
+    25% {
+        transform: translate(-5px, 5px);
+    }
+    50% {
+        transform: translate(5px, -5px);
+    }
+    75% {
+        transform: translate(-5px, 5px);
+    }
+    100% {
+        transform: translate(5px, -5px);
+    }
+}
